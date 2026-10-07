@@ -126,3 +126,4 @@ body:has(dialog[open]) { overflow: hidden; }
 
 .skip-link { position: absolute; top: 8px; left: 16px; padding: 14px 20px; background: #faf9f5; color: var(--green); border-radius: 4px; z-index: 3; transform: translateY(-150%); }
 .skip-link:focus { transform: translateY(0); }
+.quantity button, .text-button, .filters button { min-width: 44px; min-height: 44px; }
