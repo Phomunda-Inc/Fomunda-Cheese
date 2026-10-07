@@ -15,6 +15,7 @@
         <a href="#sortiment">Våra spön</a>
         <a href="#om-oss">Vår filosofi</a>
       </nav>
+      <button class="cart-toggle" id="open-cart" type="button">Varukorg <span id="cart-count">0</span></button>
     </header>
 
     <main>
@@ -69,6 +70,15 @@
       <span>Demo · Inga beställningar eller betalningar</span>
     </footer>
 
+    <dialog id="cart" aria-labelledby="cart-title">
+      <div class="cart-heading">
+        <h2 id="cart-title">Din varukorg</h2>
+        <button class="text-button" id="close-cart" type="button">Stäng <span aria-hidden="true">×</span></button>
+      </div>
+      <div id="cart-items"></div>
+      <div class="cart-total"><span>Totalt</span><strong id="cart-total"></strong></div>
+      <p class="demo-notice">Det här är en demobutik. Du kan prova varukorgen, men inte beställa eller betala.</p>
+    </dialog>
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>

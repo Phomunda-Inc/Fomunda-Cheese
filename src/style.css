@@ -79,3 +79,6 @@ h3 { font: 700 19px 'Manrope', sans-serif; letter-spacing: -.5px; margin-bottom:
 footer { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px; max-width: 1280px; padding: 38px 6%; margin: auto; }
 footer .wordmark { font-size: 24px; }
 footer p, footer > span { font-size: 11px; color: var(--muted); margin: 0; }
+dialog { width: min(520px, calc(100% - 32px)); max-height: 85vh; border: 0; border-radius: 10px; padding: 30px; background: #faf9f5; color: var(--green); }
+dialog::backdrop { background: #10261eb3; }
+body:has(dialog[open]) { overflow: hidden; }
