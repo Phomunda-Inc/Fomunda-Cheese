@@ -45,6 +45,12 @@ function renderProducts(filter = 'all') {
 
 
 
+document.querySelectorAll('[data-filter]').forEach((button) => {
+  button.addEventListener('click', () => {
+    document.querySelectorAll('[data-filter]').forEach((filter) => filter.setAttribute('aria-pressed', String(filter === button)));
+    renderProducts(button.dataset.filter);
+  });
+});
 
 
 
