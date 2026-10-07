@@ -72,3 +72,7 @@ h3 { font: 700 19px 'Manrope', sans-serif; letter-spacing: -.5px; margin-bottom:
 .product-specs { display: flex; gap: 12px; color: var(--muted); font-size: 11px; margin-bottom: 20px; }
 .product-specs span + span { border-left: 1px solid #ccd3c7; padding-left: 12px; }
 .button-add { width: 100%; background: transparent; color: var(--green); border: 1px solid #bdc8bb; }
+.about { background: #eeeee4; max-width: none; text-align: center; padding: 70px 24px; }
+.about h2 { margin-bottom: 24px; }
+.about > p:not(.eyebrow) { max-width: 510px; margin: 0 auto 26px; color: var(--muted); line-height: 1.85; font-size: 14px; }
+.about-signature { font: italic 19px Georgia, serif; }
