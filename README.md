@@ -30,3 +30,15 @@ npm run preview
 - Local illustrations and system fonts; no external font or image requests.
 
 This is a fictional demo: there is no checkout, payment processing, or order submission. Product details, prices, and brand claims are illustrative.
+
+## Tests
+
+```sh
+npm test
+```
+
+Tests exercise the actual storefront JavaScript with a lightweight DOM adapter using Node's built-in test runner. They cover filtering, cart totals, persistence, quantity limits, focus restoration, dialog controls, and storage errors. They are not a substitute for visual browser testing.
+
+## Development-history fixture
+
+The 67 incremental commits after the original repository commit were generated as a simulated development timeline for this fictional project. Each changes project files; author identities and timestamps were not backdated or fabricated. This history is not evidence of historical startup activity.
