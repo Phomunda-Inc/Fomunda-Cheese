@@ -42,5 +42,6 @@ h1 em { font-family: Georgia, serif; font-weight: 400; color: #d8d8a9; }
 .mountain { position: absolute; width: 130%; height: 50%; clip-path: polygon(0 75%, 15% 28%, 27% 49%, 43% 5%, 65% 57%, 77% 27%, 100% 65%, 100% 100%, 0 100%); }
 .mountain-back { left: -18%; top: 24%; background: #7f9481; }
 .mountain-front { left: 0; top: 38%; background: #456e5c; transform: scaleX(-1); }
+.lake { position: absolute; inset: 63% 0 0; background: repeating-linear-gradient(0deg, transparent 0 18px, #b7c9b02b 19px 20px), linear-gradient(#96ac98, #547b68); }
 h2 { font: 500 clamp(28px, 3.3vw, 42px)/1.2 'Manrope', sans-serif; letter-spacing: -1.5px; margin-bottom: 0; }
 h3 { font: 700 19px 'Manrope', sans-serif; letter-spacing: -.5px; margin-bottom: 12px; }
