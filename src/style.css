@@ -110,7 +110,8 @@ body:has(dialog[open]) { overflow: hidden; }
 @media (max-width: 520px) {
   .demo-banner span { display: block; margin: 4px 0 0; }
   .wordmark { font-size: 26px; }
-  nav { display: none; }
+  .site-header { flex-wrap: wrap; }
+  nav { order: 3; width: 100%; justify-content: center; }
   h1 { letter-spacing: -2.5px; }
   .products { grid-template-columns: 1fr; gap: 35px; }
   .product-art svg { max-height: 255px; }
