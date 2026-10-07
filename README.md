@@ -13,4 +13,11 @@ npm run dev
 
 Open the local URL printed in the terminal. Stop the server with `Ctrl+C`.
 
+## Production build
+
+```sh
+npm run build
+npm run preview
+```
+
 This is a fictional demo: there is no checkout, payment processing, or order submission. Product details, prices, and brand claims are illustrative.
