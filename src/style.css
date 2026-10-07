@@ -99,3 +99,13 @@ body:has(dialog[open]) { overflow: hidden; }
 @media (min-width: 1600px) {
   .hero-copy { padding-left: max(12%, calc((100vw - 1280px) / 2)); }
 }
+@media (max-width: 800px) {
+  .site-header { padding: 22px 5%; }
+  nav { gap: 18px; }
+  .hero { grid-template-columns: 1fr; }
+  .hero-copy { padding: 55px 7%; }
+  .landscape { min-height: 360px; }
+  .products { gap: 18px; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .section { padding: 55px 6%; }
+  .section-heading > p { display: none; }
+}
