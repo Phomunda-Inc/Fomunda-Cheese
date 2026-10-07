@@ -69,3 +69,5 @@ h2 { font: 500 clamp(28px, 3.3vw, 42px)/1.2 'Manrope', sans-serif; letter-spacin
 h3 { font: 700 19px 'Manrope', sans-serif; letter-spacing: -.5px; margin-bottom: 12px; }
 .product-title strong { white-space: nowrap; font-size: 14px; font-weight: 500; }
 .product-info > p { color: var(--muted); line-height: 1.65; font-size: 13px; min-height: 44px; }
+.product-specs { display: flex; gap: 12px; color: var(--muted); font-size: 11px; margin-bottom: 20px; }
+.product-specs span + span { border-left: 1px solid #ccd3c7; padding-left: 12px; }
