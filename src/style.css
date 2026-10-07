@@ -53,4 +53,7 @@ h1 em { font-family: Georgia, serif; font-weight: 400; color: #d8d8a9; }
 .section-heading .eyebrow { color: var(--muted); margin-bottom: 14px; }
 h2 { font: 500 clamp(28px, 3.3vw, 42px)/1.2 'Manrope', sans-serif; letter-spacing: -1.5px; margin-bottom: 0; }
 .section-heading > p { font-size: 14px; line-height: 1.7; color: var(--muted); margin-bottom: 0; }
+.filters { display: flex; gap: 10px; margin-bottom: 28px; flex-wrap: wrap; }
+.filters button { border: 1px solid #d9dfd4; color: var(--green); background: transparent; border-radius: 25px; padding: 10px 19px; font-size: 12px; }
+.filters button[aria-pressed="true"] { background: var(--green); border-color: var(--green); color: white; }
 h3 { font: 700 19px 'Manrope', sans-serif; letter-spacing: -.5px; margin-bottom: 12px; }
