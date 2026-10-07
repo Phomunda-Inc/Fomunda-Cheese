@@ -81,6 +81,10 @@ productList.addEventListener('click', (event) => {
   if (button) changeQuantity(button.dataset.add, 1);
 });
 
+cartItems.addEventListener('click', (event) => {
+  const button = event.target.closest('[data-change]');
+  if (button) changeQuantity(button.dataset.change, Number(button.dataset.step));
+});
 
 document.querySelector('#open-cart').addEventListener('click', () => cartDialog.showModal());
 document.querySelector('#close-cart').addEventListener('click', () => cartDialog.close());
