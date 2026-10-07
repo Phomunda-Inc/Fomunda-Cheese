@@ -7,11 +7,18 @@ const products = [
 ];
 
 const currency = new Intl.NumberFormat('sv-SE', { style: 'currency', currency: 'SEK', maximumFractionDigits: 0 });
+const storageKey = 'spoverket-cart-v1';
+const warning = document.querySelector('#storage-warning');
 const productList = document.querySelector('#products');
 const cartDialog = document.querySelector('#cart');
 const cartItems = document.querySelector('#cart-items');
 const announcement = document.querySelector('#announcement');
 
+function reportStorageError(error) {
+  console.error('Could not read or save the demo cart:', error);
+  warning.textContent = 'Varukorgen kunde inte sparas eller läsas i webbläsaren. Du kan fortfarande prova den, men ändringarna kan försvinna när du laddar om sidan.';
+  warning.hidden = false;
+}
 
 
 const cart = {};
@@ -71,6 +78,11 @@ function changeQuantity(id, step) {
   }
   if (quantity <= 0) delete cart[id];
   else cart[id] = quantity;
+  try {
+    localStorage.setItem(storageKey, JSON.stringify(cart));
+  } catch (error) {
+    reportStorageError(error);
+  }
   const focusedButton = cartItems.contains(document.activeElement) ? document.activeElement : null;
   renderCart();
   if (focusedButton) {
