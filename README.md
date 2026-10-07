@@ -20,4 +20,13 @@ npm run build
 npm run preview
 ```
 
+## Features
+
+- Responsive Swedish storefront with three fishing rods.
+- Filter products by fishing style.
+- Demo cart with quantity controls and a total in Swedish kronor.
+- Cart saved in your browser across reloads.
+- Keyboard-accessible cart, skip link, mobile navigation, and reduced-motion support.
+- Local illustrations and system fonts; no external font or image requests.
+
 This is a fictional demo: there is no checkout, payment processing, or order submission. Product details, prices, and brand claims are illustrative.
