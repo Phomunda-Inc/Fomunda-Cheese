@@ -56,4 +56,5 @@ h2 { font: 500 clamp(28px, 3.3vw, 42px)/1.2 'Manrope', sans-serif; letter-spacin
 .filters { display: flex; gap: 10px; margin-bottom: 28px; flex-wrap: wrap; }
 .filters button { border: 1px solid #d9dfd4; color: var(--green); background: transparent; border-radius: 25px; padding: 10px 19px; font-size: 12px; }
 .filters button[aria-pressed="true"] { background: var(--green); border-color: var(--green); color: white; }
+.products { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 26px; }
 h3 { font: 700 19px 'Manrope', sans-serif; letter-spacing: -.5px; margin-bottom: 12px; }
