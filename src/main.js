@@ -69,7 +69,13 @@ function changeQuantity(id, step) {
   }
   if (quantity <= 0) delete cart[id];
   else cart[id] = quantity;
+  const focusedButton = cartItems.contains(document.activeElement) ? document.activeElement : null;
   renderCart();
+  if (focusedButton) {
+    const replacement = cartItems.querySelector(`[data-change="${id}"][data-step="${step}"]`);
+    if (replacement && !replacement.disabled) replacement.focus();
+    else document.querySelector('#close-cart').focus();
+  }
 }
 
 document.querySelectorAll('[data-filter]').forEach((button) => {
