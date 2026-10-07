@@ -8,6 +8,7 @@ const products = [
 
 const currency = new Intl.NumberFormat('sv-SE', { style: 'currency', currency: 'SEK', maximumFractionDigits: 0 });
 const productList = document.querySelector('#products');
+const cartDialog = document.querySelector('#cart');
 const cartItems = document.querySelector('#cart-items');
 
 
@@ -69,6 +70,8 @@ document.querySelectorAll('[data-filter]').forEach((button) => {
 
 
 
+document.querySelector('#open-cart').addEventListener('click', () => cartDialog.showModal());
+document.querySelector('#close-cart').addEventListener('click', () => cartDialog.close());
 
 renderProducts();
 renderCart();
