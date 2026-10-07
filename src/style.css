@@ -82,3 +82,6 @@ footer p, footer > span { font-size: 11px; color: var(--muted); margin: 0; }
 dialog { width: min(520px, calc(100% - 32px)); max-height: 85vh; border: 0; border-radius: 10px; padding: 30px; background: #faf9f5; color: var(--green); }
 dialog::backdrop { background: #10261eb3; }
 body:has(dialog[open]) { overflow: hidden; }
+.cart-heading { display: flex; align-items: center; justify-content: space-between; gap: 15px; margin-bottom: 28px; }
+.cart-heading h2 { font-size: 27px; }
+.text-button { background: none; border: 0; padding: 8px; font-size: 13px; color: inherit; }
