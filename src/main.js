@@ -76,6 +76,10 @@ document.querySelectorAll('[data-filter]').forEach((button) => {
   });
 });
 
+productList.addEventListener('click', (event) => {
+  const button = event.target.closest('[data-add]');
+  if (button) changeQuantity(button.dataset.add, 1);
+});
 
 
 document.querySelector('#open-cart').addEventListener('click', () => cartDialog.showModal());
