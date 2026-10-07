@@ -76,3 +76,6 @@ h3 { font: 700 19px 'Manrope', sans-serif; letter-spacing: -.5px; margin-bottom:
 .about h2 { margin-bottom: 24px; }
 .about > p:not(.eyebrow) { max-width: 510px; margin: 0 auto 26px; color: var(--muted); line-height: 1.85; font-size: 14px; }
 .about-signature { font: italic 19px Georgia, serif; }
+footer { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px; max-width: 1280px; padding: 38px 6%; margin: auto; }
+footer .wordmark { font-size: 24px; }
+footer p, footer > span { font-size: 11px; color: var(--muted); margin: 0; }
