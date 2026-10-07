@@ -46,5 +46,6 @@ h1 em { font-family: Georgia, serif; font-weight: 400; color: #d8d8a9; }
 .shore { position: absolute; inset: 65% -20% -20% 45%; background: #234d3c; border-radius: 80% 0 0 0; transform: rotate(-10deg); }
 .hero-rod { position: absolute; bottom: 13%; left: 54%; height: 63%; width: 4px; background: #172f28; transform: rotate(-27deg); transform-origin: bottom; border-radius: 100% 100% 0 0; }
 .hero-rod::after { content: ''; position: absolute; bottom: 0; height: 18%; width: 9px; left: -3px; background: #bd9b6f; border-radius: 4px; }
+.fishing-line { position: absolute; top: 27%; left: 31%; width: 32%; height: 53%; border: 1px solid #e9e6ce90; border-left: 0; border-bottom: 0; border-radius: 0 100% 0 0; transform: rotate(-17deg); }
 h2 { font: 500 clamp(28px, 3.3vw, 42px)/1.2 'Manrope', sans-serif; letter-spacing: -1.5px; margin-bottom: 0; }
 h3 { font: 700 19px 'Manrope', sans-serif; letter-spacing: -.5px; margin-bottom: 12px; }
