@@ -8,9 +8,11 @@ const products = [
 
 const currency = new Intl.NumberFormat('sv-SE', { style: 'currency', currency: 'SEK', maximumFractionDigits: 0 });
 const productList = document.querySelector('#products');
+const cartItems = document.querySelector('#cart-items');
 
 
 
+const cart = {};
 
 function rodIllustration() {
   return `<svg viewBox="0 0 400 260" aria-hidden="true" focusable="false">
@@ -43,6 +45,19 @@ function renderProducts(filter = 'all') {
     </article>`).join('');
 }
 
+function renderCart() {
+  const selected = products.filter((product) => cart[product.id]);
+  document.querySelector('#cart-count').textContent = Object.values(cart).reduce((sum, quantity) => sum + quantity, 0);
+  document.querySelector('#cart-total').textContent = currency.format(selected.reduce((sum, product) => sum + product.price * cart[product.id], 0));
+  cartItems.innerHTML = selected.length ? selected.map((product) => `<div class="cart-item">
+    <div><h3>${product.name}</h3><p>${currency.format(product.price)} / st</p></div>
+    <div class="quantity">
+      <button type="button" data-change="${product.id}" data-step="-1" aria-label="Minska antal ${product.name}">−</button>
+      <span aria-label="Antal">${cart[product.id]}</span>
+      <button type="button" data-change="${product.id}" data-step="1" aria-label="Öka antal ${product.name}">+</button>
+    </div>
+  </div>`).join('') : '<p class="empty-cart">Här var det lugnt. Hitta ditt spö och lägg det i varukorgen.</p>';
+}
 
 
 document.querySelectorAll('[data-filter]').forEach((button) => {
@@ -56,3 +71,4 @@ document.querySelectorAll('[data-filter]').forEach((button) => {
 
 
 renderProducts();
+renderCart();
