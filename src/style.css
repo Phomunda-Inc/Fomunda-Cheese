@@ -120,3 +120,7 @@ body:has(dialog[open]) { overflow: hidden; }
   footer { flex-direction: column; align-items: start; padding: 30px 6%; }
   dialog { padding: 22px; }
 }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .product-art svg { transition: none; }
+}
