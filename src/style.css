@@ -91,3 +91,5 @@ body:has(dialog[open]) { overflow: hidden; }
 .quantity { display: flex; align-items: center; gap: 12px; }
 .quantity button { width: 34px; height: 34px; background: #e9eddf; color: var(--green); border: 0; border-radius: 50%; }
 .cart-total { display: flex; justify-content: space-between; padding-top: 22px; margin-top: 18px; border-top: 1px solid #c8d1c2; }
+.demo-notice, .empty-cart { font-size: 13px; color: var(--muted); line-height: 1.7; }
+.demo-notice { padding: 16px; background: #e9eddf; margin: 24px 0 0; border-radius: 4px; }
