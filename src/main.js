@@ -20,8 +20,24 @@ function reportStorageError(error) {
   warning.hidden = false;
 }
 
+function loadCart() {
+  try {
+    const saved = localStorage.getItem(storageKey);
+    if (saved === null) return {};
+    const parsed = JSON.parse(saved);
+    if (!parsed || typeof parsed !== 'object' || Array.isArray(parsed)
+      || !Object.entries(parsed).every(([id, quantity]) => products.some((product) => product.id === id)
+        && Number.isSafeInteger(quantity) && quantity >= 1 && quantity <= 99)) {
+      throw new Error('Invalid saved cart');
+    }
+    return parsed;
+  } catch (error) {
+    reportStorageError(error);
+    return {};
+  }
+}
 
-const cart = {};
+const cart = loadCart();
 
 function rodIllustration() {
   return `<svg viewBox="0 0 400 260" aria-hidden="true" focusable="false">
