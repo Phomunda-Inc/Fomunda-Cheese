@@ -60,6 +60,14 @@ function renderCart() {
   </div>`).join('') : '<p class="empty-cart">Här var det lugnt. Hitta ditt spö och lägg det i varukorgen.</p>';
 }
 
+function changeQuantity(id, step) {
+  const product = products.find((entry) => entry.id === id);
+  if (!product) throw new Error(`Unknown product: ${id}`);
+  const quantity = (cart[id] || 0) + step;
+  if (quantity <= 0) delete cart[id];
+  else cart[id] = quantity;
+  renderCart();
+}
 
 document.querySelectorAll('[data-filter]').forEach((button) => {
   button.addEventListener('click', () => {
