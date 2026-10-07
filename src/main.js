@@ -10,6 +10,7 @@ const currency = new Intl.NumberFormat('sv-SE', { style: 'currency', currency: '
 const productList = document.querySelector('#products');
 const cartDialog = document.querySelector('#cart');
 const cartItems = document.querySelector('#cart-items');
+const announcement = document.querySelector('#announcement');
 
 
 
@@ -65,6 +66,7 @@ function changeQuantity(id, step) {
   if (!product) throw new Error(`Unknown product: ${id}`);
   const quantity = (cart[id] || 0) + step;
   if (quantity > 99) {
+    announcement.textContent = `Du kan lägga högst 99 ${product.name} i demovarukorgen.`;
     return;
   }
   if (quantity <= 0) delete cart[id];
@@ -76,6 +78,7 @@ function changeQuantity(id, step) {
     if (replacement && !replacement.disabled) replacement.focus();
     else document.querySelector('#close-cart').focus();
   }
+  announcement.textContent = `${product.name}: ${cart[id] || 0} i varukorgen.`;
 }
 
 document.querySelectorAll('[data-filter]').forEach((button) => {
