@@ -59,4 +59,6 @@ h2 { font: 500 clamp(28px, 3.3vw, 42px)/1.2 'Manrope', sans-serif; letter-spacin
 .products { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 26px; }
 .product-art { border-radius: 6px; position: relative; overflow: hidden; }
 .product-art > span { position: absolute; left: 18px; top: 18px; font-size: 10px; text-transform: uppercase; letter-spacing: 1.3px; }
+.product-art svg { display: block; width: 100%; padding: 18px 0; transition: transform .25s; }
+.product:hover svg { transform: rotate(-3deg); }
 h3 { font: 700 19px 'Manrope', sans-serif; letter-spacing: -.5px; margin-bottom: 12px; }
