@@ -55,7 +55,7 @@ function renderCart() {
     <div class="quantity">
       <button type="button" data-change="${product.id}" data-step="-1" aria-label="Minska antal ${product.name}">−</button>
       <span aria-label="Antal">${cart[product.id]}</span>
-      <button type="button" data-change="${product.id}" data-step="1" aria-label="Öka antal ${product.name}">+</button>
+      <button type="button" data-change="${product.id}" data-step="1" aria-label="Öka antal ${product.name}" ${cart[product.id] >= 99 ? 'disabled' : ''}>+</button>
     </div>
   </div>`).join('') : '<p class="empty-cart">Här var det lugnt. Hitta ditt spö och lägg det i varukorgen.</p>';
 }
@@ -64,6 +64,9 @@ function changeQuantity(id, step) {
   const product = products.find((entry) => entry.id === id);
   if (!product) throw new Error(`Unknown product: ${id}`);
   const quantity = (cart[id] || 0) + step;
+  if (quantity > 99) {
+    return;
+  }
   if (quantity <= 0) delete cart[id];
   else cart[id] = quantity;
   renderCart();
