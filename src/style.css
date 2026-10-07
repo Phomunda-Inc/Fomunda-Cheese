@@ -71,3 +71,4 @@ h3 { font: 700 19px 'Manrope', sans-serif; letter-spacing: -.5px; margin-bottom:
 .product-info > p { color: var(--muted); line-height: 1.65; font-size: 13px; min-height: 44px; }
 .product-specs { display: flex; gap: 12px; color: var(--muted); font-size: 11px; margin-bottom: 20px; }
 .product-specs span + span { border-left: 1px solid #ccd3c7; padding-left: 12px; }
+.button-add { width: 100%; background: transparent; color: var(--green); border: 1px solid #bdc8bb; }
