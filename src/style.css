@@ -64,4 +64,8 @@ h2 { font: 500 clamp(28px, 3.3vw, 42px)/1.2 'Manrope', sans-serif; letter-spacin
 .sage { background: #e4e9df; }
 .sand { background: #ede8db; }
 .clay { background: #eadfd6; }
+.product-info { padding-top: 22px; }
+.product-title { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
 h3 { font: 700 19px 'Manrope', sans-serif; letter-spacing: -.5px; margin-bottom: 12px; }
+.product-title strong { white-space: nowrap; font-size: 14px; font-weight: 500; }
+.product-info > p { color: var(--muted); line-height: 1.65; font-size: 13px; min-height: 44px; }
