@@ -144,3 +144,105 @@ h2 {
 .menu-toggle {
   display: none;
 }
+.hero {
+  min-height: 590px;
+  height: min(720px, 73vh);
+  position: relative;
+  color: white;
+  display: flex;
+  align-items: center;
+  padding: 60px 8%;
+  isolation: isolate;
+}
+.hero-image {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  object-position: center 52%;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(15, 25, 17, 0.76),
+    rgba(15, 25, 17, 0.3) 52%,
+    rgba(15, 25, 17, 0.03)
+  );
+  z-index: -1;
+}
+.eyebrow {
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 1.5;
+  margin-bottom: 18px;
+}
+.hero .eyebrow {
+  color: #ebefc9;
+}
+.hero h1 {
+  font-family: var(--display);
+  font-size: 84px;
+  line-height: 1.06;
+  margin-bottom: 10px;
+}
+.hero-subtitle {
+  font-family: var(--display);
+  font-size: 46px;
+  line-height: 1.1;
+}
+.hero-copy {
+  font-size: 14px;
+  margin: 24px 0 28px;
+  color: #f2f2ec;
+}
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 35px;
+  padding: 15px 23px;
+  border: 1px solid transparent;
+  border-radius: 0;
+  font-size: 12px;
+  font-weight: 600;
+  min-height: 48px;
+  transition: background 0.2s;
+}
+.button span {
+  font-size: 20px;
+  line-height: 1;
+}
+.button-light {
+  background: var(--paper);
+  color: var(--green);
+}
+.button-light:hover {
+  background: var(--accent);
+}
+.button-dark {
+  background: var(--green);
+  color: white;
+}
+.button-dark:hover {
+  background: #2f5845;
+}
+.button-dark:disabled {
+  opacity: 0.65;
+  cursor: wait;
+}
+.hero-bottom {
+  position: absolute;
+  bottom: 28px;
+  left: 8%;
+  right: 6%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 9px;
+  color: #eff0e0;
+}
+.hero-bottom a span {
+  margin-left: 15px;
+  font-size: 16px;
+}
