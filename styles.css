@@ -89,3 +89,58 @@ h2 {
 .skip-link:focus {
   top: 10px;
 }
+.announcement {
+  padding: 8px 20px;
+  background: var(--green);
+  color: #f1f5dc;
+  text-align: center;
+  font-size: 11px;
+  letter-spacing: 0;
+}
+.announcement span {
+  margin-left: 8px;
+  color: #c9d6b3;
+}
+.site-header {
+  min-height: 92px;
+  padding: 0 6%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  background: var(--paper);
+}
+.wordmark {
+  font-family: var(--display);
+  font-size: 43px;
+  line-height: 1;
+  display: inline-flex;
+  align-items: baseline;
+  gap: 8px;
+}
+.wordmark span {
+  font-family: var(--body);
+  font-size: 10px;
+  font-weight: 600;
+}
+.site-header nav {
+  display: flex;
+  align-items: center;
+  gap: 34px;
+  font-size: 13px;
+}
+.site-header nav a:hover,
+.footer-top nav a:hover {
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}
+.nav-contact {
+  border: 1px solid var(--ink);
+  padding: 11px 20px;
+}
+.nav-contact span {
+  margin-left: 25px;
+}
+.menu-toggle {
+  display: none;
+}
