@@ -1,0 +1,91 @@
+:root {
+  --ink: #203c32;
+  --green: #183c32;
+  --paper: #fafbf7;
+  --muted: #667068;
+  --line: #dce2d9;
+  --accent: #e4eabf;
+  --body: 'DM Sans', sans-serif;
+  --display: 'Libre Caslon Display', Georgia, serif;
+}
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--body);
+  font-size: 15px;
+  line-height: 1.65;
+}
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+button,
+a,
+input,
+textarea,
+select {
+  -webkit-tap-highlight-color: transparent;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+button,
+a {
+  touch-action: manipulation;
+}
+button {
+  cursor: pointer;
+}
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid #acba59;
+  outline-offset: 5px;
+}
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+h1,
+h2,
+h3 {
+  font-weight: 400;
+  letter-spacing: 0;
+}
+h2 {
+  font-family: var(--display);
+  font-size: 52px;
+  line-height: 1.05;
+}
+.skip-link {
+  position: fixed;
+  left: 15px;
+  top: -100px;
+  padding: 10px 18px;
+  z-index: 100;
+  background: white;
+}
+.skip-link:focus {
+  top: 10px;
+}
