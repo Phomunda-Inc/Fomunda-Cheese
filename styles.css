@@ -246,3 +246,17 @@ h2 {
   margin-left: 15px;
   font-size: 16px;
 }
+.values-strip {
+  min-height: 74px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 65px;
+  background: #eaf0df;
+  font-size: 12px;
+}
+.values-strip span::before {
+  content: '+';
+  margin-right: 13px;
+  color: #69764c;
+}
