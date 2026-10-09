@@ -260,3 +260,22 @@ h2 {
   margin-right: 13px;
   color: #69764c;
 }
+.section {
+  padding: 88px 8%;
+}
+.section-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 32px;
+  margin-bottom: 38px;
+}
+.section-heading .eyebrow {
+  color: #6a765a;
+  margin-bottom: 12px;
+}
+.section-heading > p {
+  color: var(--muted);
+  font-size: 13px;
+  padding-bottom: 3px;
+}
