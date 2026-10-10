@@ -342,3 +342,44 @@ h2 {
   font-size: 8px;
   font-weight: 600;
 }
+.product-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 21px 0 7px;
+}
+.product-title h3 {
+  font-family: var(--display);
+  font-size: 31px;
+}
+.product-title > span {
+  color: #84907b;
+  font-size: 11px;
+}
+.product-type {
+  font-size: 9px;
+  font-weight: 600;
+  color: #788164;
+  margin-bottom: 13px;
+}
+.product > p:not(.product-type) {
+  font-size: 13px;
+  color: var(--muted);
+  max-width: 325px;
+}
+.product > a {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  border-top: 1px solid var(--line);
+  margin-top: 23px;
+  padding-top: 14px;
+  font-size: 11px;
+}
+.product > a:hover {
+  color: #698141;
+}
+.product > a span {
+  font-size: 16px;
+}
