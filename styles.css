@@ -320,3 +320,25 @@ h2 {
 .product[hidden] {
   display: none;
 }
+.product-image {
+  aspect-ratio: 1.12;
+  position: relative;
+  background: #e5e8da;
+  overflow: hidden;
+}
+.product-image img {
+  transition: transform 0.5s;
+}
+.product:hover .product-image img {
+  transform: scale(1.035);
+}
+.product-tag {
+  position: absolute;
+  left: 16px;
+  top: 16px;
+  padding: 6px 10px;
+  background: var(--paper);
+  color: var(--green);
+  font-size: 8px;
+  font-weight: 600;
+}
