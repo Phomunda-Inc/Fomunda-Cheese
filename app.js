@@ -20,4 +20,20 @@ primaryNavigation.querySelectorAll('a').forEach((link) => {
   link.addEventListener('click', closeNavigation);
 });
 
+const filters = document.querySelectorAll('[data-filter]');
+const products = document.querySelectorAll('[data-category]');
+
+filters.forEach((button) => {
+  button.addEventListener('click', () => {
+    const category = button.dataset.filter;
+    filters.forEach((filter) => {
+      const selected = filter === button;
+      filter.classList.toggle('active', selected);
+    });
+    products.forEach((product) => {
+      product.hidden = category !== 'all' && product.dataset.category !== category;
+    });
+  });
+});
+
 document.querySelector('#year').textContent = String(new Date().getFullYear());
