@@ -29,6 +29,7 @@ filters.forEach((button) => {
     filters.forEach((filter) => {
       const selected = filter === button;
       filter.classList.toggle('active', selected);
+      filter.setAttribute('aria-pressed', String(selected));
     });
     products.forEach((product) => {
       product.hidden = category !== 'all' && product.dataset.category !== category;
