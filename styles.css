@@ -423,3 +423,31 @@ h2 {
   color: #576252;
   margin-bottom: 16px;
 }
+.history {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 15px;
+  border-top: 1px solid #cbd4bd;
+  padding-top: 24px;
+  margin: 30px 0;
+}
+.history strong {
+  display: block;
+  font-family: var(--display);
+  font-size: 29px;
+  font-weight: 400;
+  margin-bottom: 8px;
+}
+.history span {
+  display: block;
+  font-size: 10px;
+  line-height: 1.7;
+  color: #576252;
+}
+.text-link {
+  font-size: 12px;
+  border-bottom: 1px solid var(--green);
+  padding-bottom: 8px;
+  display: inline-flex;
+  gap: 25px;
+}
