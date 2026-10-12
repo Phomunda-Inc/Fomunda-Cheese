@@ -536,3 +536,22 @@ textarea {
   resize: vertical;
   min-height: 120px;
 }
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+.form-submit {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+.form-submit > span {
+  font-size: 10px;
+  color: #586450;
+}
+.form-status {
+  font-size: 12px;
+  margin-top: 12px;
+}

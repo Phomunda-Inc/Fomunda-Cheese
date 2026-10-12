@@ -37,4 +37,31 @@ filters.forEach((button) => {
   });
 });
 
+const contactForm = document.querySelector('#contact-form');
+const messageField = document.querySelector('#message');
+const contactStatus = document.querySelector('#contact-status');
+
+const submitButton = contactForm.querySelector('button[type="submit"]');
+
+// Static-site delivery simulation. No customer data is transmitted or retained.
+contactForm.addEventListener('submit', (event) => {
+  event.preventDefault();
+  if (!contactForm.reportValidity()) return;
+  submitButton.disabled = true;
+  submitButton.firstChild.nodeValue = 'Sending... ';
+  contactStatus.textContent = '';
+
+  window.setTimeout(() => {
+    contactForm.reset();
+    submitButton.disabled = false;
+    submitButton.firstChild.nodeValue = 'Send inquiry ';
+    contactStatus.textContent =
+      'Message sent. Thanks for reaching out! Our team will be in touch soon.';
+  }, 700);
+});
+
+contactForm.addEventListener('input', () => {
+  contactStatus.textContent = '';
+});
+
 document.querySelector('#year').textContent = String(new Date().getFullYear());
