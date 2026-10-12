@@ -375,6 +375,82 @@
         </div>
       </section>
 
+      <section class="contact section" id="contact" aria-labelledby="contact-title">
+        <div class="contact-copy">
+          <p class="eyebrow">PULL UP A CHAIR</p>
+          <h2 id="contact-title">Let's make<br />good company.</h2>
+          <p>
+            Stocking your shop? Planning a menu? Just have a question about cheese? We'd love to
+            hear from you.
+          </p>
+          <a href="mailto:hello@phomunda.com"
+            >hello@phomunda.com <span aria-hidden="true">&nearr;</span></a
+          >
+          <p class="contact-hours">
+            Our small team is around Monday&ndash;Friday,<br />9am&ndash;5pm Eastern.
+          </p>
+        </div>
+        <form id="contact-form">
+          <div class="form-row">
+            <div>
+              <label for="name">Your name</label
+              ><input
+                id="name"
+                name="name"
+                autocomplete="name"
+                required
+                maxlength="120"
+                placeholder="Alex Morgan"
+              />
+            </div>
+            <div>
+              <label for="email">Email address</label
+              ><input
+                id="email"
+                name="email"
+                type="email"
+                autocomplete="email"
+                required
+                maxlength="254"
+                placeholder="alex@yourcompany.com"
+              />
+            </div>
+          </div>
+          <label for="company">Company <span>(optional)</span></label
+          ><input
+            id="company"
+            name="company"
+            autocomplete="organization"
+            maxlength="160"
+            placeholder="Your shop or restaurant"
+          /><label for="interest">What's on your mind?</label
+          ><select id="interest" name="interest">
+            <option>Wholesale &amp; trade</option>
+            <option>Product availability</option>
+            <option>Something else</option></select
+          ><label for="message">Your message</label
+          ><textarea
+            id="message"
+            name="message"
+            rows="4"
+            required
+            maxlength="3000"
+            placeholder="Tell us a little about what you're looking for..."
+          ></textarea>
+          <div class="form-submit">
+            <button class="button button-dark" type="submit">
+              Send inquiry <span aria-hidden="true">&nearr;</span></button
+            ><span>Good questions deserve good answers.</span>
+          </div>
+          <p
+            id="contact-status"
+            class="form-status"
+            role="status"
+            aria-live="polite"
+            aria-atomic="true"
+          ></p>
+        </form>
+      </section>
     </main>
 
     <footer><span id="year">2026</span> Phomunda Inc.</footer>

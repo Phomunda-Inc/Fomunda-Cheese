@@ -478,3 +478,61 @@ h2 {
   color: var(--muted);
   max-width: 340px;
 }
+.contact {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 12%;
+  background: #e3eaca;
+}
+.contact-copy h2 {
+  font-size: 62px;
+  margin-bottom: 24px;
+}
+.contact-copy > p:not(.eyebrow) {
+  max-width: 330px;
+  color: #586450;
+  font-size: 13px;
+}
+.contact-copy > a {
+  display: inline-flex;
+  gap: 20px;
+  font-size: 16px;
+  border-bottom: 1px solid #a1af8d;
+  padding-bottom: 8px;
+  margin: 22px 0;
+}
+.contact-copy .contact-hours {
+  font-size: 11px !important;
+}
+label {
+  display: block;
+  font-size: 11px;
+  font-weight: 600;
+  margin-bottom: 7px;
+}
+label span {
+  font-weight: 400;
+  color: var(--muted);
+}
+input,
+textarea,
+select {
+  width: 100%;
+  color: var(--ink);
+  border: 1px solid #bac6a7;
+  background: rgba(255, 255, 255, 0.52);
+  border-radius: 0;
+  padding: 12px 14px;
+  min-height: 46px;
+  font-size: 12px;
+  margin-bottom: 18px;
+}
+input::placeholder,
+textarea::placeholder {
+  color: #74816b;
+  opacity: 1;
+}
+textarea {
+  resize: vertical;
+  min-height: 120px;
+}
