@@ -555,3 +555,55 @@ textarea {
   font-size: 12px;
   margin-top: 12px;
 }
+.site-footer {
+  background: var(--green);
+  color: #eef2e6;
+  padding: 55px 8% 22px;
+}
+.footer-top {
+  display: grid;
+  grid-template-columns: 1fr 0.8fr 1fr;
+  gap: 65px;
+  padding-bottom: 44px;
+}
+.footer-top > div:first-child > p {
+  font-size: 12px;
+  color: #b9c9b6;
+  margin-top: 20px;
+}
+.footer-top nav {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 12px;
+}
+.open-source .eyebrow {
+  font-size: 9px;
+  color: #d8e0b7;
+  margin-bottom: 13px;
+}
+.open-source > p:last-child {
+  color: #b9c9b6;
+  font-size: 12px;
+}
+.open-source a {
+  color: #eef2e6;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.footer-bottom {
+  border-top: 1px solid #40604e;
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  gap: 25px;
+  font-size: 9px;
+  color: #b9c9b6;
+}
+.footer-bottom a {
+  color: #eef2e6;
+  margin-left: 8px;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}

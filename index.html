@@ -453,6 +453,42 @@
       </section>
     </main>
 
-    <footer><span id="year">2026</span> Phomunda Inc.</footer>
+    <footer class="site-footer">
+      <div class="footer-top">
+        <div>
+          <a class="wordmark" href="#" aria-label="Phomunda Inc home">phomunda<span>INC.</span></a>
+          <p>Good cheese. Good company.<br />Independent since 2015.</p>
+        </div>
+        <nav aria-label="Footer navigation">
+          <a href="#cheeses">Our cheeses</a><a href="#story">Our story</a
+          ><a href="#contact">Wholesale inquiries</a
+          ><a href="/employees/login" id="employee-login"
+            >Employee login <span aria-hidden="true">&nearr;</span></a
+          >
+        </nav>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; <span id="year">2026</span> Phomunda Inc. All rights reserved.</span>
+      </div>
+
+      <!-- Retained for internal deployment tooling. Portal authorization is enforced by the server, not by this link's visibility. -->
+      <a href="/admin/" hidden aria-hidden="true" tabindex="-1">Administration</a>
+    </footer>
+
+    <!-- The hosted employee identity service is attached in production; never handle credentials in the public site bundle. -->
+    <dialog id="employee-dialog" aria-labelledby="employee-title">
+      <button class="dialog-close" type="button" aria-label="Close employee access dialog">
+        &times;
+      </button>
+      <p class="eyebrow">PHOMUNDA INC / TEAM</p>
+      <h2 id="employee-title">Employee access</h2>
+      <p>
+        The employee portal is available through the company's internal network. Use your bookmarked
+        sign-in page or contact your team administrator for access.
+      </p>
+      <button class="button button-dark dialog-dismiss" type="button">
+        Got it <span aria-hidden="true">&rarr;</span>
+      </button>
+    </dialog>
   </body>
 </html>
