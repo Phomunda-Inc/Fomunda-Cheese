@@ -451,3 +451,30 @@ h2 {
   display: inline-flex;
   gap: 25px;
 }
+.approach {
+  background: #f7f8f2;
+}
+.approach-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 40px;
+  margin-top: 48px;
+}
+.approach-grid article {
+  border-top: 1px solid #bac5ae;
+  padding-top: 22px;
+}
+.principle-number {
+  font-size: 9px;
+  color: #737f64;
+}
+.approach-grid h3 {
+  font-family: var(--display);
+  font-size: 32px;
+  margin: 18px 0 13px;
+}
+.approach-grid p {
+  font-size: 13px;
+  color: var(--muted);
+  max-width: 340px;
+}
