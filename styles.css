@@ -388,3 +388,38 @@ h2 {
   color: var(--muted);
   font-size: 11px;
 }
+.story {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: #e9eedd;
+}
+.story-image {
+  min-height: 640px;
+  position: relative;
+}
+.story-image img {
+  position: absolute;
+  inset: 0;
+}
+.story-image > span {
+  position: absolute;
+  bottom: 300px;
+  left: 30px;
+  padding: 9px 13px;
+  font-size: 9px;
+}
+.story-copy {
+  align-self: center;
+  padding: 70px 13%;
+}
+.story-copy .eyebrow {
+  color: #6a765a;
+}
+.story-copy h2 {
+  margin-bottom: 25px;
+}
+.story-copy > p:not(.eyebrow) {
+  font-size: 13px;
+  color: #576252;
+  margin-bottom: 16px;
+}
