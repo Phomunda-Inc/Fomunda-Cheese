@@ -55,7 +55,7 @@ const submitButton = contactForm.querySelector('button[type="submit"]');
 // Static-site delivery simulation. No customer data is transmitted or retained.
 contactForm.addEventListener('submit', (event) => {
   event.preventDefault();
-  if (!contactForm.reportValidity()) return;
+  if (submitButton.disabled || !contactForm.reportValidity()) return;
   submitButton.disabled = true;
   submitButton.firstChild.nodeValue = 'Sending... ';
   contactStatus.textContent = '';
