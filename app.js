@@ -41,6 +41,15 @@ const contactForm = document.querySelector('#contact-form');
 const messageField = document.querySelector('#message');
 const contactStatus = document.querySelector('#contact-status');
 
+document.querySelectorAll('[data-inquiry]').forEach((link) => {
+  link.addEventListener('click', () => {
+    document.querySelector('#interest').value = 'Product availability';
+    if (!messageField.value.trim()) {
+      messageField.value = `I'd like to learn more about ${link.dataset.inquiry}, including available formats and pricing.`;
+    }
+  });
+});
+
 const submitButton = contactForm.querySelector('button[type="submit"]');
 
 // Static-site delivery simulation. No customer data is transmitted or retained.
