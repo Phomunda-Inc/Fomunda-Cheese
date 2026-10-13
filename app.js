@@ -64,4 +64,12 @@ contactForm.addEventListener('input', () => {
   contactStatus.textContent = '';
 });
 
+const employeeDialog = document.querySelector('#employee-dialog');
+document.querySelector('#employee-login').addEventListener('click', (event) => {
+  event.preventDefault();
+  employeeDialog.showModal();
+});
+employeeDialog.querySelectorAll('.dialog-close, .dialog-dismiss').forEach((button) => {
+  button.addEventListener('click', () => employeeDialog.close());
+});
 document.querySelector('#year').textContent = String(new Date().getFullYear());
