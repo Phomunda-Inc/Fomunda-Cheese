@@ -58,10 +58,12 @@ contactForm.addEventListener('submit', (event) => {
   if (submitButton.disabled || !contactForm.reportValidity()) return;
   submitButton.disabled = true;
   submitButton.firstChild.nodeValue = 'Sending... ';
+  contactForm.setAttribute('aria-busy', 'true');
   contactStatus.textContent = '';
 
   window.setTimeout(() => {
     contactForm.reset();
+    contactForm.setAttribute('aria-busy', 'false');
     submitButton.disabled = false;
     submitButton.firstChild.nodeValue = 'Send inquiry ';
     contactStatus.textContent =
