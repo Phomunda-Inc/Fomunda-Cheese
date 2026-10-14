@@ -20,6 +20,13 @@ primaryNavigation.querySelectorAll('a').forEach((link) => {
   link.addEventListener('click', closeNavigation);
 });
 
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape' && menuToggle.getAttribute('aria-expanded') === 'true') {
+    closeNavigation();
+    menuToggle.focus();
+  }
+});
+
 const filters = document.querySelectorAll('[data-filter]');
 const products = document.querySelectorAll('[data-category]');
 
