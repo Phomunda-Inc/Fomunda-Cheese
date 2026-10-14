@@ -81,4 +81,17 @@ document.querySelector('#employee-login').addEventListener('click', (event) => {
 employeeDialog.querySelectorAll('.dialog-close, .dialog-dismiss').forEach((button) => {
   button.addEventListener('click', () => employeeDialog.close());
 });
+employeeDialog.addEventListener('click', (event) => {
+  if (event.target !== employeeDialog) return;
+  const bounds = employeeDialog.getBoundingClientRect();
+  if (
+    event.clientX < bounds.left ||
+    event.clientX > bounds.right ||
+    event.clientY < bounds.top ||
+    event.clientY > bounds.bottom
+  ) {
+    employeeDialog.close();
+  }
+});
+
 document.querySelector('#year').textContent = String(new Date().getFullYear());
