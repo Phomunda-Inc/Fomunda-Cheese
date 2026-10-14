@@ -645,3 +645,41 @@ dialog > p:not(.eyebrow) {
     padding-right: max(8%, calc((100% - 1400px) / 2));
   }
 }
+@media (max-width: 1050px) {
+  .section {
+    padding: 65px 6%;
+  }
+  .hero {
+    padding-left: 6%;
+  }
+  .hero-bottom {
+    left: 6%;
+  }
+  .section-heading {
+    align-items: flex-start;
+  }
+  .section-heading > p {
+    max-width: 220px;
+  }
+  h2 {
+    font-size: 44px;
+  }
+  .product-grid {
+    gap: 20px;
+  }
+  .product-title h3 {
+    font-size: 27px;
+  }
+  .story-copy {
+    padding: 48px 10%;
+  }
+  .story-image {
+    min-height: 600px;
+  }
+  .contact {
+    gap: 7%;
+  }
+  .footer-top {
+    gap: 32px;
+  }
+}
