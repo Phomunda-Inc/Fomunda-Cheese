@@ -638,3 +638,10 @@ dialog > p:not(.eyebrow) {
   height: 40px;
   color: var(--ink);
 }
+@media (min-width: 1600px) {
+  .section,
+  .site-footer {
+    padding-left: max(8%, calc((100% - 1400px) / 2));
+    padding-right: max(8%, calc((100% - 1400px) / 2));
+  }
+}
