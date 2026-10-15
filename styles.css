@@ -872,3 +872,27 @@ dialog > p:not(.eyebrow) {
     margin-left: 0;
   }
 }
+@media (max-width: 380px) {
+  .hero h1 {
+    font-size: 53px;
+  }
+  .hero-subtitle {
+    font-size: 35px;
+  }
+  .desktop-break {
+    display: none;
+  }
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .filter {
+    padding: 9px 10px;
+  }
+  .announcement span {
+    margin-left: 3px;
+  }
+  dialog {
+    padding: 38px 24px 28px;
+  }
+}
