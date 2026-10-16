@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#183c32" />
+    <meta name="description" content="Phomunda Inc administration workspace." />
+    <title>Admin workspace | Phomunda Inc.</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23183c32'/%3E%3Ctext x='32' y='46' text-anchor='middle' font-family='Georgia' font-size='48' fill='%23ffffff'%3Ep%3C/text%3E%3C/svg%3E"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Libre+Caslon+Display&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="topline">
+      <span>PHOMUNDA INC. / INTERNAL</span
+      ><a href="../">Return to the public site <span aria-hidden="true">&nearr;</span></a>
+    </div>
+
+    <main id="main" class="admin-shell">
+      <header class="admin-header">
+        <a class="wordmark" href="../" aria-label="Phomunda Inc home">phomunda<span>INC.</span></a>
+        <form action="/admin/logout" method="post">
+          <input type="hidden" name="csrf" value="{{csrf}}" />
+          <button class="admin-button" type="submit">Sign out</button>
+        </form>
+      </header>
+
+      <section class="welcome" aria-labelledby="page-title">
+        <p class="eyebrow">THE BACK OFFICE</p>
+        <h1 id="page-title">Admin workspace</h1>
+        <p>A quiet corner for the things that keep good company running.</p>
+      </section>
+
+      <section class="flag-card" aria-labelledby="flag-title">
+        <div class="card-heading">
+          <div>
+            <p class="eyebrow">THE BACK OFFICE</p>
+            <h2 id="flag-title">Challenge complete</h2>
+          </div>
+          <span class="status"><span aria-hidden="true"></span>Access granted</span>
+        </div>
+        <div class="flag-slot">
+          <h3>Your flag</h3>
+          <code class="flag-value">{{flag}}</code>
+        </div>
+        <p class="card-note">Phomunda Inc. / Internal record</p>
+      </section>
+
+      <aside class="access-notice" aria-labelledby="access-title">
+        <span class="notice-mark" aria-hidden="true">!</span>
+        <div>
+          <h2 id="access-title">Administrator access</h2>
+          <p>
+            You are signed in to the internal workspace. Your session expires after one hour. Sign
+            out when you finish, especially on a shared device.
+          </p>
+        </div>
+      </aside>
+
+      <footer class="admin-footer">
+        <span>&copy; <span>2026</span> Phomunda Inc.</span>
+        <a href="../">Back to Phomunda Inc. <span aria-hidden="true">&rarr;</span></a>
+      </footer>
+    </main>
+  </body>
+</html>
