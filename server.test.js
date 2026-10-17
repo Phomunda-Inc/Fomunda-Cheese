@@ -223,3 +223,133 @@ test('invalid proxy trust configuration fails closed', () => {
   }
 });
 
+test('configuration rejects unsafe defaults and production HTTP', () => {
+  assert.throws(
+    () =>
+      createApp({
+        username: '',
+        password,
+        flag,
+        publicOrigin: 'http://localhost:3500',
+      }),
+    /ADMIN_USERNAME/,
+  );
+  assert.throws(
+    () =>
+      createApp({
+        username: 'replace-with-your-admin-username',
+        password,
+        flag,
+        publicOrigin: 'http://localhost:3500',
+      }),
+    /ADMIN_USERNAME/,
+  );
+  assert.throws(
+    () =>
+      createApp({
+        username: 'admin',
+        password: '',
+        flag,
+        publicOrigin: 'http://localhost:3500',
+      }),
+    /ADMIN_PASSWORD/,
+  );
+  assert.throws(
+    () =>
+      createApp({
+        username: 'admin',
+        password: 'replace-with-a-long-unique-password',
+        flag,
+        publicOrigin: 'http://localhost:3500',
+      }),
+    /ADMIN_PASSWORD/,
+  );
+  assert.throws(
+    () => createApp({ username: 'admin', password, flag, publicOrigin: 'http://localhost:3500/' }),
+    /PUBLIC_ORIGIN/,
+  );
+  assert.throws(
+    () =>
+      createApp({
+        username: 'admin',
+        password,
+        flag,
+        publicOrigin: 'http://localhost:3500',
+        production: true,
+      }),
+    /HTTPS/,
+  );
+});
+
+test('HTTPS configuration issues a Secure cookie', async (t) => {
+  const server = createApp({
+    username: 'admin',
+    password,
+    flag,
+    publicOrigin: 'https://phomunda.example',
+    production: true,
+  });
+  server.listen(0, '127.0.0.1');
+  await once(server, 'listening');
+  t.after(
+    () =>
+      new Promise((resolve) => {
+        server.close(resolve);
+        server.closeAllConnections();
+      }),
+  );
+  const response = await fetch(`http://127.0.0.1:${server.address().port}/admin/login`);
+  assert.match(response.headers.get('set-cookie'), /; Secure/);
+});
+
+test('authenticated sessions expire after one hour', async (t) => {
+  let now = Date.now();
+  t.mock.method(Date, 'now', () => now);
+  const { request, submit } = await fixture(t);
+  const login = await submit();
+  const cookie = login.headers.get('set-cookie').split(';')[0];
+  now += 60 * 60 * 1000;
+  const response = await request('/admin/', { headers: { Cookie: cookie } });
+  assert.equal(response.status, 303);
+  assert.equal(response.headers.get('location'), '/admin/login');
+  assert.ok(!(await response.text()).includes(flag));
+});
+
+test('the admin template has a placeholder, not the configured flag', async () => {
+  const html = await readFile(new URL('./admin/index.html', import.meta.url), 'utf8');
+  assert.ok(html.includes('<code class="flag-value">{{flag}}</code>'));
+  assert.ok(!html.includes(flag));
+  assert.doesNotMatch(html, /OP\{[^}]+\}/);
+});
+
+test('public repository files contain no flag-shaped examples', async () => {
+  for (const path of ['server.js', 'scripts/setup.js', '.env.example', 'README.md']) {
+    const content = await readFile(new URL(path, import.meta.url), 'utf8');
+    assert.doesNotMatch(content, /OP\{/, path);
+  }
+});
+
+test('missing, example, and HTML-unsafe flags are rejected without logging their values', () => {
+  for (const value of [
+    undefined,
+    '',
+    'OP{replace-with-your-challenge-flag}',
+    'OP{bad--comment}',
+    'OP{bad-->comment}',
+    'OP{<script>}',
+    'OP{line\nbreak}',
+    `OP{${'a'.repeat(129)}}`,
+  ]) {
+    assert.throws(
+      () =>
+        createApp({
+          username: 'admin',
+          password,
+          flag: value,
+          publicOrigin: 'http://localhost:3500',
+        }),
+      (error) =>
+        error.message.startsWith('CTF_FLAG must') && (!value || !error.message.includes(value)),
+    );
+  }
+});
