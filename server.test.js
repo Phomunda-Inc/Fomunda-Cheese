@@ -148,3 +148,78 @@ test('bad credentials, forged requests, and oversized forms are rejected', async
   assert.equal(chunked.status, 413);
 });
 
+test('configured admin username is used for login', async (t) => {
+  const { submit } = await fixture(t, 'challenge-admin');
+  assert.equal((await submit({ username: 'admin' })).status, 401);
+  assert.equal((await submit()).status, 303);
+});
+
+test('five failed attempts trigger a cooldown even for the correct password', async (t) => {
+  const { submit } = await fixture(t);
+  for (let count = 0; count < 5; count += 1) {
+    assert.equal((await submit({ password: 'wrong' })).status, 401);
+  }
+  const response = await submit();
+  assert.equal(response.status, 429);
+  assert.ok(Number(response.headers.get('retry-after')) > 0);
+  assert.match(await response.text(), /Too many failed attempts/);
+});
+
+test('forwarded headers cannot bypass cooldowns without a trusted peer', async (t) => {
+  for (const trustedProxies of [[], ['192.0.2.10']]) {
+    const { submit } = await fixture(t, 'admin', { trustedProxies });
+    for (let count = 0; count < 5; count += 1) {
+      assert.equal(
+        (await submit({ password: 'wrong' }, { 'X-Forwarded-For': '203.0.113.10' })).status,
+        401,
+      );
+    }
+    assert.equal((await submit({}, { 'X-Forwarded-For': '203.0.113.11' })).status, 429);
+  }
+});
+
+test('trusted proxies isolate player cooldowns and ignore spoofed leftmost addresses', async (t) => {
+  const { submit } = await fixture(t, 'admin', { trustedProxies: ['loopback'] });
+  for (let count = 0; count < 5; count += 1) {
+    assert.equal(
+      (
+        await submit(
+          { password: 'wrong' },
+          {
+            'X-Forwarded-For': '198.51.100.1, 203.0.113.10',
+          },
+        )
+      ).status,
+      401,
+    );
+  }
+  assert.equal(
+    (
+      await submit(
+        {},
+        {
+          'X-Forwarded-For': '198.51.100.2, 203.0.113.10',
+        },
+      )
+    ).status,
+    429,
+  );
+  assert.equal((await submit({}, { 'X-Forwarded-For': '203.0.113.11' })).status, 303);
+});
+
+test('invalid proxy trust configuration fails closed', () => {
+  for (const trustedProxies of [true, 'loopback', ['not-an-address'], [null]]) {
+    assert.throws(
+      () =>
+        createApp({
+          username: 'admin',
+          password,
+          flag,
+          publicOrigin: 'http://localhost:3500',
+          trustedProxies,
+        }),
+      /TRUSTED_PROXIES/,
+    );
+  }
+});
+
