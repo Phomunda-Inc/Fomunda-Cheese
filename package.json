@@ -7,10 +7,12 @@
     "node": "^22.13.0 || >=24"
   },
   "scripts": {
-    "start": "node --env-file-if-exists=.env server.js",
     "setup": "node scripts/setup.js",
+    "start": "node --env-file-if-exists=.env server.js",
     "test": "node --test",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
   },
   "dependencies": {
     "proxy-addr": "^2.0.8"
